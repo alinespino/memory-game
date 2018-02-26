@@ -13,12 +13,12 @@ class Game extends Component {
             topScore: 0
         };
 
-        // in case need to Bind // 
+        // in case need to Bind, will go here// 
     }
 
-    // Life cycle // 
-    componentDidMount(){
-    // this.setState({ data: this.shuffleData(this.state.data) });
+// Life cycle // 
+componentDidMount(){
+    this.setState({data: this.shuffleData(this.state.data)});
     }
 
 // CORRECT GUESS // ADD POINTS TO SCORE // 
@@ -30,8 +30,8 @@ handleCorrectGuess = (newData) => {
     const newScore = score +1;
     // If new score is greater than current top score: new topScore will be new score, if not top score will remain.
     const newTopScore = newScore > topScore ? newScore: topScore;
+    
     // Update state // 
-
     this.setState({
         data: this.shuffleData(newData),
         score: newScore,
@@ -44,13 +44,12 @@ handleCorrectGuess = (newData) => {
 // // INCORRECT GUESS // 
 // Once the user's score is reset after an incorrect guess, the game should restart.
 
-handleIncorrectGuess = () => {
-
-    
-}
-
-
-
+handleIncorrectGuess = (data) => {
+    this.setState({
+        data: this.resetScore(data),
+        score:0
+    });
+};
 
 
 
@@ -67,18 +66,17 @@ shuffleCards = data => {
           data[j] = temp;
       }
       return data;
-    
 }
-
 
 
 //* RESET SCORE // 
 //The user's score should be incremented when clicking an image for the first time. 
 //The user's score should be reset to 0 if they click the same image more than once.
 
-resetScore = () => {
-
-    
+resetScore = (data) => {
+    // ... puts all objects in array // 
+    const resetScore = data.map(item => ({ ...item, clicked:false}));
+    return this.shuffleData(resetScore);
 }
 
 
