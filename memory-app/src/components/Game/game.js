@@ -13,7 +13,7 @@ class Game extends Component {
             topScore: 0
         };
 
-        // in case need to Bind, will go here// 
+// ### DELETE THIS ###  in case need to Bind, will go here  ### //
     }
 
 // Life cycle // 
@@ -40,7 +40,6 @@ handleCorrectGuess = (newData) => {
 };
 
 
-
 // // INCORRECT GUESS // 
 // Once the user's score is reset after an incorrect guess, the game should restart.
 
@@ -50,8 +49,6 @@ handleIncorrectGuess = (data) => {
         score:0
     });
 };
-
-
 
 // SHUFFLE CARDS // 
 // Every time an image is clicked, the images rendered to the page should
@@ -68,7 +65,6 @@ shuffleCards = data => {
       return data;
 }
 
-
 //* RESET SCORE // 
 //The user's score should be incremented when clicking an image for the first time. 
 //The user's score should be reset to 0 if they click the same image more than once.
@@ -81,12 +77,22 @@ resetScore = (data) => {
 
 
 // HANDLE CLICKS // Each image should listen for click events. //
-
-handleClicks = () => {
-
+// track cards by id, assign if guess was correct or incorrect // 
+handleClicks = (id) => {
+    let correctGuess = false;
+    const newData = this.state.data.map(item => {
+        const newItem = { ...item };
+        if (newItem.id === id) {
+            if(!newItem.clicked){
+                newItem.clicked = true;
+                correctGuess = true;
+            }
+        }
+        return newItem;
+    });
+    correctGuess ? this.handleCorrectGuess(newData) : this.handleIncorrectGuess(newData);
     
-}
-
+};
 
 
 // RENDER APP //
