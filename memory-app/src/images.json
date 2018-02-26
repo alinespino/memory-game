@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "image": "/assets/images/mickey01.jpg",
+      "clicked": false
+    },
+    {
+      "id": 2,
+      "image": "/assets/images/mickey02.jpg",
+      "clicked": false
+    },
+    {
+      "id": 3,
+      "image": "/assets/images/mickey03.jpg",
+      "clicked": false
+    },
+    {
+      "id": 4,
+      "image": "/assets/images/mickey04.jpg",
+      "clicked": false
+    },
+    {
+      "id": 5,
+      "image": "/assets/images/mickey05.jpg",
+      "clicked": false
+    },
+    {
+      "id": 6,
+      "image": "/assets/images/mickey06.jpg",
+      "clicked": false
+    },
+    {
+      "id": 7,
+      "image": "/assets/images/mickey07.jpg",
+      "clicked": false
+    },
+    {
+      "id": 8,
+      "image": "/assets/images/mickey08.jpg",
+      "clicked": false
+    },
+    {
+      "id": 9,
+      "image": "/assets/images/mickey09.jpg",
+      "clicked": false
+    },
+    {
+      "id": 10,
+      "image": "/assets/images/mickey10.jpg",
+      "clicked": false
+    },
+    {
+      "id": 11,
+      "image": "/assets/images/mickey11.jpg",
+      "clicked": false
+    },
+    {
+      "id": 12,
+      "image": "/assets/images/mickey12.jpg",
+      "clicked": false
+    }
+  ]
+  
