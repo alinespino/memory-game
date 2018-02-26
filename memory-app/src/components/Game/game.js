@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import data from "../../images.json";
+// pending to import header, navbar, container, footer //
 
 
 // Set game state // 
@@ -18,7 +19,7 @@ class Game extends Component {
 
 // Life cycle // 
 componentDidMount(){
-    this.setState({data: this.shuffleData(this.state.data)});
+    this.setState({data: this.shuffleCards(this.state.data)});
     }
 
 // CORRECT GUESS // ADD POINTS TO SCORE // 
@@ -33,7 +34,7 @@ handleCorrectGuess = (newData) => {
     
     // Update state // 
     this.setState({
-        data: this.shuffleData(newData),
+        data: this.shuffleCards(newData),
         score: newScore,
         topScore: newTopScore
     });
@@ -103,14 +104,10 @@ handleClicks = (id) => {
                <h1>Test</h1>
 
 
-
             </div>
-
-
         )
     }
 
-
-}
+};
 
 export default Game;
