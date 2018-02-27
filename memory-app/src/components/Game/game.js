@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import data from "../../images.json";
+import Header from "../Header";
 // pending to import header, navbar, container, footer //
 
 
@@ -101,7 +102,9 @@ handleClicks = (id) => {
     render(){
         return (
             <div>
-               <h1>Test</h1>
+              
+              <Header />
+              
 
 
             </div>
